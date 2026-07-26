@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FirstByte Marketplace - Your Online Store</title>
     <link rel="icon" type="image/png" href="images/Favicon.png">
+    <script src="js/theme.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
@@ -300,13 +301,6 @@
 
     <script>
         // --- Dark Mode ---
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDark = html.getAttribute('data-theme') === 'dark';
-            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            document.querySelector('.theme-toggle').textContent = isDark ? '🌙' : '☀️';
-        }
-
         // --- Sticky Header ---
         window.addEventListener('scroll', () => {
             document.getElementById('mainHeader').classList.toggle('scrolled', window.scrollY > 50);

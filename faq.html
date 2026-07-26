@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - FirstByte Marketplace</title>
     <link rel="icon" type="image/png" href="images/Favicon.png">
+    <script src="js/theme.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/pages.css">
 </head>
@@ -149,12 +150,6 @@
     </footer>
 
     <script>
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDark = html.getAttribute('data-theme') === 'dark';
-            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            document.querySelector('.theme-toggle').textContent = isDark ? '🌙' : '☀️';
-        }
         function toggleFaq(btn) {
             const item = btn.closest('.faq-item');
             const isOpen = item.classList.contains('open');
@@ -162,5 +157,6 @@
             if (!isOpen) item.classList.add('open');
         }
     </script>
+    <script src="js/theme.js"></script>
 </body>
 </html>

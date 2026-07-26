@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - FirstByte Marketplace</title>
     <link rel="icon" type="image/png" href="images/Favicon.png">
+    <script src="js/theme.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/pages.css">
 </head>
@@ -104,13 +105,6 @@
         </div>
     </footer>
 
-    <script>
-        function toggleTheme() {
-            const html = document.documentElement;
-            const isDark = html.getAttribute('data-theme') === 'dark';
-            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            document.querySelector('.theme-toggle').textContent = isDark ? '🌙' : '☀️';
-        }
-    </script>
+    <script src="js/theme.js"></script>
 </body>
 </html>
