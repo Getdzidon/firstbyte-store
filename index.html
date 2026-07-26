@@ -20,7 +20,7 @@
         <ul class="cart-items" id="cartItems"></ul>
         <div class="cart-footer">
             <p>Total: <strong id="cartTotal">$0.00</strong></p>
-            <button class="btn checkout-btn">Checkout</button>
+            <button class="btn checkout-btn" onclick="window.location.href='checkout.html'">Checkout</button>
         </div>
     </aside>
 
@@ -309,7 +309,7 @@
         });
 
         // --- Cart ---
-        let cart = [];
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
         function toggleCart() {
             document.getElementById('cartSidebar').classList.toggle('open');
             document.getElementById('cartOverlay').classList.toggle('open');
@@ -320,6 +320,7 @@
             const price = parseFloat(p.dataset.price);
             const existing = cart.find(i => i.name === name);
             existing ? existing.qty++ : cart.push({ name, price, qty: 1 });
+            localStorage.setItem('cart', JSON.stringify(cart));
             renderCart();
             showToast(`🛒 ${name} added to cart!`);
         }
@@ -336,7 +337,12 @@
             document.getElementById('cartTotal').textContent = `$${total.toFixed(2)}`;
             document.getElementById('cartBadge').textContent = count;
         }
-        function removeFromCart(idx) { cart.splice(idx, 1); renderCart(); }
+        function removeFromCart(idx) {
+            cart.splice(idx, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+        renderCart();
 
         // --- Modal ---
         function openModal(btn) {

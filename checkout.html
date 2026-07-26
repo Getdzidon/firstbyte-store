@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - FirstByte Marketplace</title>
+    <link rel="icon" type="image/png" href="images/Favicon.png">
+    <script src="js/theme.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/pages.css">
+    <link rel="stylesheet" href="./css/checkout.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <a href="index.html" class="logo-link">
+            <img src="images/FirstByte Logo1.png" alt="FirstByte Logo" class="logo-img">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#products">Shop</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <h1>Checkout</h1>
+        <p>Complete your order below</p>
+    </div>
+
+    <!-- Empty cart state -->
+    <div class="empty-checkout" id="emptyCheckout" style="display:none">
+        <div class="empty-icon">🛒</div>
+        <h2>Your cart is empty</h2>
+        <p>Add some products before checking out.</p>
+        <a href="index.html#products" class="btn">Browse Products</a>
+    </div>
+
+    <!-- Order confirmed state -->
+    <div class="order-confirmed" id="orderConfirmed" style="display:none">
+        <div class="confirmed-icon">✅</div>
+        <h2>Order Placed!</h2>
+        <p>Thank you for your order. A confirmation has been sent to your email.</p>
+        <p class="order-num">Order #<strong id="orderNumber"></strong></p>
+        <a href="index.html" class="btn">Continue Shopping</a>
+    </div>
+
+    <main class="checkout-layout" id="checkoutLayout">
+
+        <!-- Left: Forms -->
+        <div class="checkout-forms">
+
+            <!-- Step indicator -->
+            <div class="steps">
+                <div class="step active" id="step1ind"><span>1</span> Shipping</div>
+                <div class="step-divider"></div>
+                <div class="step" id="step2ind"><span>2</span> Payment</div>
+                <div class="step-divider"></div>
+                <div class="step" id="step3ind"><span>3</span> Review</div>
+            </div>
+
+            <!-- Step 1: Shipping -->
+            <div class="form-step" id="step1">
+                <h2>Shipping Details</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="firstName" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="lastName" placeholder="Doe" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+1 234 567 8900">
+                </div>
+                <div class="form-group">
+                    <label>Street Address</label>
+                    <input type="text" id="address" placeholder="123 Main Street" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" id="city" placeholder="New York" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Postal Code</label>
+                        <input type="text" id="postal" placeholder="10001" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <select id="country">
+                        <option value="">Select country</option>
+                        <option>Afghanistan</option>
+                        <option>Albania</option>
+                        <option>Algeria</option>
+                        <option>Andorra</option>
+                        <option>Angola</option>
+                        <option>Antigua and Barbuda</option>
+                        <option>Argentina</option>
+                        <option>Armenia</option>
+                        <option>Australia</option>
+                        <option>Austria</option>
+                        <option>Azerbaijan</option>
+                        <option>Bahamas</option>
+                        <option>Bahrain</option>
+                        <option>Bangladesh</option>
+                        <option>Barbados</option>
+                        <option>Belarus</option>
+                        <option>Belgium</option>
+                        <option>Belize</option>
+                        <option>Benin</option>
+                        <option>Bhutan</option>
+                        <option>Bolivia</option>
+                        <option>Bosnia and Herzegovina</option>
+                        <option>Botswana</option>
+                        <option>Brazil</option>
+                        <option>Brunei</option>
+                        <option>Bulgaria</option>
+                        <option>Burkina Faso</option>
+                        <option>Burundi</option>
+                        <option>Cabo Verde</option>
+                        <option>Cambodia</option>
+                        <option>Cameroon</option>
+                        <option>Canada</option>
+                        <option>Central African Republic</option>
+                        <option>Chad</option>
+                        <option>Chile</option>
+                        <option>China</option>
+                        <option>Colombia</option>
+                        <option>Comoros</option>
+                        <option>Congo (Brazzaville)</option>
+                        <option>Congo (Kinshasa)</option>
+                        <option>Costa Rica</option>
+                        <option>Croatia</option>
+                        <option>Cuba</option>
+                        <option>Cyprus</option>
+                        <option>Czech Republic</option>
+                        <option>Denmark</option>
+                        <option>Djibouti</option>
+                        <option>Dominica</option>
+                        <option>Dominican Republic</option>
+                        <option>Ecuador</option>
+                        <option>Egypt</option>
+                        <option>El Salvador</option>
+                        <option>Equatorial Guinea</option>
+                        <option>Eritrea</option>
+                        <option>Estonia</option>
+                        <option>Eswatini</option>
+                        <option>Ethiopia</option>
+                        <option>Fiji</option>
+                        <option>Finland</option>
+                        <option>France</option>
+                        <option>Gabon</option>
+                        <option>Gambia</option>
+                        <option>Georgia</option>
+                        <option>Germany</option>
+                        <option>Ghana</option>
+                        <option>Greece</option>
+                        <option>Grenada</option>
+                        <option>Guatemala</option>
+                        <option>Guinea</option>
+                        <option>Guinea-Bissau</option>
+                        <option>Guyana</option>
+                        <option>Haiti</option>
+                        <option>Honduras</option>
+                        <option>Hungary</option>
+                        <option>Iceland</option>
+                        <option>India</option>
+                        <option>Indonesia</option>
+                        <option>Iran</option>
+                        <option>Iraq</option>
+                        <option>Ireland</option>
+                        <option>Israel</option>
+                        <option>Italy</option>
+                        <option>Jamaica</option>
+                        <option>Japan</option>
+                        <option>Jordan</option>
+                        <option>Kazakhstan</option>
+                        <option>Kenya</option>
+                        <option>Kiribati</option>
+                        <option>Kuwait</option>
+                        <option>Kyrgyzstan</option>
+                        <option>Laos</option>
+                        <option>Latvia</option>
+                        <option>Lebanon</option>
+                        <option>Lesotho</option>
+                        <option>Liberia</option>
+                        <option>Libya</option>
+                        <option>Liechtenstein</option>
+                        <option>Lithuania</option>
+                        <option>Luxembourg</option>
+                        <option>Madagascar</option>
+                        <option>Malawi</option>
+                        <option>Malaysia</option>
+                        <option>Maldives</option>
+                        <option>Mali</option>
+                        <option>Malta</option>
+                        <option>Marshall Islands</option>
+                        <option>Mauritania</option>
+                        <option>Mauritius</option>
+                        <option>Mexico</option>
+                        <option>Micronesia</option>
+                        <option>Moldova</option>
+                        <option>Monaco</option>
+                        <option>Mongolia</option>
+                        <option>Montenegro</option>
+                        <option>Morocco</option>
+                        <option>Mozambique</option>
+                        <option>Myanmar</option>
+                        <option>Namibia</option>
+                        <option>Nauru</option>
+                        <option>Nepal</option>
+                        <option>Netherlands</option>
+                        <option>New Zealand</option>
+                        <option>Nicaragua</option>
+                        <option>Niger</option>
+                        <option>Nigeria</option>
+                        <option>North Korea</option>
+                        <option>North Macedonia</option>
+                        <option>Norway</option>
+                        <option>Oman</option>
+                        <option>Pakistan</option>
+                        <option>Palau</option>
+                        <option>Palestine</option>
+                        <option>Panama</option>
+                        <option>Papua New Guinea</option>
+                        <option>Paraguay</option>
+                        <option>Peru</option>
+                        <option>Philippines</option>
+                        <option>Poland</option>
+                        <option>Portugal</option>
+                        <option>Qatar</option>
+                        <option>Romania</option>
+                        <option>Russia</option>
+                        <option>Rwanda</option>
+                        <option>Saint Kitts and Nevis</option>
+                        <option>Saint Lucia</option>
+                        <option>Saint Vincent and the Grenadines</option>
+                        <option>Samoa</option>
+                        <option>San Marino</option>
+                        <option>Sao Tome and Principe</option>
+                        <option>Saudi Arabia</option>
+                        <option>Senegal</option>
+                        <option>Serbia</option>
+                        <option>Seychelles</option>
+                        <option>Sierra Leone</option>
+                        <option>Singapore</option>
+                        <option>Slovakia</option>
+                        <option>Slovenia</option>
+                        <option>Solomon Islands</option>
+                        <option>Somalia</option>
+                        <option>South Africa</option>
+                        <option>South Korea</option>
+                        <option>South Sudan</option>
+                        <option>Spain</option>
+                        <option>Sri Lanka</option>
+                        <option>Sudan</option>
+                        <option>Suriname</option>
+                        <option>Sweden</option>
+                        <option>Switzerland</option>
+                        <option>Syria</option>
+                        <option>Taiwan</option>
+                        <option>Tajikistan</option>
+                        <option>Tanzania</option>
+                        <option>Thailand</option>
+                        <option>Timor-Leste</option>
+                        <option>Togo</option>
+                        <option>Tonga</option>
+                        <option>Trinidad and Tobago</option>
+                        <option>Tunisia</option>
+                        <option>Turkey</option>
+                        <option>Turkmenistan</option>
+                        <option>Tuvalu</option>
+                        <option>Uganda</option>
+                        <option>Ukraine</option>
+                        <option>United Arab Emirates</option>
+                        <option>United Kingdom</option>
+                        <option>United States</option>
+                        <option>Uruguay</option>
+                        <option>Uzbekistan</option>
+                        <option>Vanuatu</option>
+                        <option>Vatican City</option>
+                        <option>Venezuela</option>
+                        <option>Vietnam</option>
+                        <option>Yemen</option>
+                        <option>Zambia</option>
+                        <option>Zimbabwe</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Shipping Method</label>
+                    <div class="shipping-options">
+                        <label class="shipping-option">
+                            <input type="radio" name="shipping" value="4.99" data-label="Standard (3–5 days)" checked>
+                            <span>Standard Shipping (3–5 days) — $4.99</span>
+                        </label>
+                        <label class="shipping-option">
+                            <input type="radio" name="shipping" value="12.99" data-label="Express (1–2 days)">
+                            <span>Express Shipping (1–2 days) — $12.99</span>
+                        </label>
+                        <label class="shipping-option">
+                            <input type="radio" name="shipping" value="0" data-label="Free Standard (5–7 days)">
+                            <span>Free Standard (5–7 days) — Free</span>
+                        </label>
+                    </div>
+                </div>
+                <button class="btn" onclick="goToStep(2)">Continue to Payment →</button>
+            </div>
+
+            <!-- Step 2: Payment -->
+            <div class="form-step" id="step2" style="display:none">
+                <h2>Payment Details</h2>
+                <div class="payment-tabs">
+                    <button class="pay-tab active" onclick="switchPayTab(this,'card')">💳 Card</button>
+                    <button class="pay-tab" onclick="switchPayTab(this,'paypal')">🅿️ PayPal</button>
+                </div>
+                <div id="cardForm">
+                    <div class="form-group">
+                        <label>Cardholder Name</label>
+                        <input type="text" id="cardName" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Expiry Date</label>
+                            <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" oninput="formatExpiry(this)">
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" id="cvv" placeholder="123" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+                <div id="paypalForm" style="display:none">
+                    <div class="form-group">
+                        <label>PayPal Email</label>
+                        <input type="email" id="paypalEmail" placeholder="paypal@example.com">
+                    </div>
+                    <p class="paypal-note">You will be redirected to PayPal to complete your payment securely.</p>
+                </div>
+                <div class="step-nav">
+                    <button class="btn-outline" onclick="goToStep(1)">← Back</button>
+                    <button class="btn" onclick="goToStep(3)">Review Order →</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Review -->
+            <div class="form-step" id="step3" style="display:none">
+                <h2>Review Your Order</h2>
+                <div class="review-section">
+                    <h4>Shipping To</h4>
+                    <p id="reviewShipping"></p>
+                </div>
+                <div class="review-section">
+                    <h4>Payment</h4>
+                    <p id="reviewPayment"></p>
+                </div>
+                <div class="review-section">
+                    <h4>Items</h4>
+                    <ul id="reviewItems"></ul>
+                </div>
+                <div class="step-nav">
+                    <button class="btn-outline" onclick="goToStep(2)">← Back</button>
+                    <button class="btn place-order-btn" onclick="placeOrder()">Place Order</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right: Order Summary -->
+        <aside class="order-summary">
+            <h3>Order Summary</h3>
+            <ul id="summaryItems"></ul>
+            <div class="summary-line"><span>Subtotal</span><span id="summarySubtotal">$0.00</span></div>
+            <div class="summary-line"><span>Shipping</span><span id="summaryShipping">$4.99</span></div>
+            <div class="summary-line total"><span>Total</span><span id="summaryTotal">$0.00</span></div>
+        </aside>
+
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FirstByte Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        let shippingCost = 4.99;
+        let shippingLabel = 'Standard (3–5 days)';
+
+        // Show empty state if cart is empty
+        if (cart.length === 0) {
+            document.getElementById('emptyCheckout').style.display = 'flex';
+            document.getElementById('checkoutLayout').style.display = 'none';
+        }
+
+        // Render order summary sidebar
+        function renderSummary() {
+            const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+            const total = subtotal + shippingCost;
+            document.getElementById('summaryItems').innerHTML = cart.map(i =>
+                `<li><span>${i.name} x${i.qty}</span><span>$${(i.price * i.qty).toFixed(2)}</span></li>`
+            ).join('');
+            document.getElementById('summarySubtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('summaryShipping').textContent = shippingCost === 0 ? 'Free' : `$${shippingCost.toFixed(2)}`;
+            document.getElementById('summaryTotal').textContent = `$${total.toFixed(2)}`;
+        }
+        renderSummary();
+
+        // Update shipping cost when option changes
+        document.querySelectorAll('input[name="shipping"]').forEach(r => {
+            r.addEventListener('change', () => {
+                shippingCost = parseFloat(r.value);
+                shippingLabel = r.dataset.label;
+                renderSummary();
+            });
+        });
+
+        // Step navigation
+        function goToStep(n) {
+            if (n === 2 && !validateStep1()) return;
+            if (n === 3 && !validateStep2()) return;
+            [1, 2, 3].forEach(i => {
+                document.getElementById(`step${i}`).style.display = i === n ? 'block' : 'none';
+                document.getElementById(`step${i}ind`).classList.toggle('active', i <= n);
+            });
+            if (n === 3) populateReview();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function validateStep1() {
+            const fields = ['firstName', 'lastName', 'email', 'address', 'city', 'postal', 'country'];
+            for (const id of fields) {
+                const el = document.getElementById(id);
+                if (!el.value.trim()) { el.focus(); el.classList.add('error'); return false; }
+                el.classList.remove('error');
+            }
+            return true;
+        }
+
+        function validateStep2() {
+            const isCard = document.getElementById('cardForm').style.display !== 'none';
+            if (isCard) {
+                const fields = ['cardName', 'cardNumber', 'expiry', 'cvv'];
+                for (const id of fields) {
+                    const el = document.getElementById(id);
+                    if (!el.value.trim()) { el.focus(); el.classList.add('error'); return false; }
+                    el.classList.remove('error');
+                }
+            }
+            return true;
+        }
+
+        function populateReview() {
+            const fn = document.getElementById('firstName').value;
+            const ln = document.getElementById('lastName').value;
+            const addr = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const country = document.getElementById('country').value;
+            document.getElementById('reviewShipping').textContent =
+                `${fn} ${ln}, ${addr}, ${city}, ${country} — ${shippingLabel}`;
+
+            const isCard = document.getElementById('cardForm').style.display !== 'none';
+            if (isCard) {
+                const num = document.getElementById('cardNumber').value;
+                document.getElementById('reviewPayment').textContent =
+                    `Credit/Debit Card ending in ${num.slice(-4)}`;
+            } else {
+                document.getElementById('reviewPayment').textContent =
+                    `PayPal — ${document.getElementById('paypalEmail').value}`;
+            }
+
+            document.getElementById('reviewItems').innerHTML = cart.map(i =>
+                `<li>${i.name} x${i.qty} — $${(i.price * i.qty).toFixed(2)}</li>`
+            ).join('');
+        }
+
+        function placeOrder() {
+            const orderNum = 'FB-' + Date.now().toString().slice(-6);
+            document.getElementById('orderNumber').textContent = orderNum;
+            localStorage.removeItem('cart');
+            document.getElementById('checkoutLayout').style.display = 'none';
+            document.getElementById('orderConfirmed').style.display = 'flex';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Card formatting
+        function formatCard(el) {
+            el.value = el.value.replace(/\D/g, '').replace(/(.{4})/g, '$1 ').trim();
+        }
+        function formatExpiry(el) {
+            el.value = el.value.replace(/\D/g, '').replace(/^(\d{2})(\d)/, '$1/$2');
+        }
+
+        function switchPayTab(btn, tab) {
+            document.querySelectorAll('.pay-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('cardForm').style.display = tab === 'card' ? 'block' : 'none';
+            document.getElementById('paypalForm').style.display = tab === 'paypal' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
