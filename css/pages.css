@@ -1,0 +1,83 @@
+/* ===== Page Hero Banner ===== */
+.page-hero {
+    background: linear-gradient(135deg, var(--header-bg) 0%, #2d2d50 100%);
+    color: white; text-align: center; padding: 60px 20px;
+}
+.page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 10px; }
+.page-hero p { color: rgba(255,255,255,.7); font-size: 16px; }
+
+/* ===== Page Content Wrapper ===== */
+.page-content {
+    max-width: 860px; margin: 0 auto; padding: 60px 24px 80px;
+}
+
+/* ===== Prose (long-form text) ===== */
+.prose h2 {
+    font-size: 1.25rem; font-weight: 700; margin: 36px 0 12px;
+    color: var(--text); padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+}
+.prose p { color: var(--text-muted); line-height: 1.8; margin-bottom: 14px; font-size: 15px; }
+.prose ul, .prose ol { color: var(--text-muted); padding-left: 22px; margin-bottom: 14px; }
+.prose li { margin-bottom: 8px; line-height: 1.7; font-size: 15px; }
+.prose a { color: var(--accent); text-decoration: none; }
+.prose a:hover { text-decoration: underline; }
+
+/* ===== Info Cards (Shipping / Returns) ===== */
+.info-grid {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    justify-content: center; margin-bottom: 52px;
+}
+.info-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 28px 24px; text-align: center;
+    flex: 1; min-width: 200px; max-width: 240px;
+    box-shadow: var(--shadow-sm);
+}
+.info-icon { font-size: 2.2rem; margin-bottom: 12px; }
+.info-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.info-card p { font-size: 14px; color: var(--text-muted); margin-bottom: 4px; }
+.info-price { font-weight: 600; color: var(--accent) !important; }
+
+/* ===== FAQ ===== */
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.faq-question {
+    width: 100%; background: none; border: none; padding: 20px 24px;
+    text-align: left; font-size: 15px; font-weight: 600; color: var(--text);
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    transition: background .2s;
+}
+.faq-question:hover { background: var(--accent-light); }
+.faq-icon { font-size: 22px; color: var(--accent); transition: transform .3s; flex-shrink: 0; }
+.faq-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s ease, padding .3s;
+    padding: 0 24px;
+}
+.faq-answer p { color: var(--text-muted); font-size: 14px; line-height: 1.8; }
+.faq-answer a { color: var(--accent); text-decoration: none; }
+.faq-answer a:hover { text-decoration: underline; }
+.faq-item.open .faq-answer { max-height: 300px; padding: 0 24px 20px; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-item.open .faq-question { color: var(--accent); }
+
+/* ===== 404 Page ===== */
+.not-found {
+    min-height: 70vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 40px 20px;
+}
+.not-found-code {
+    font-size: clamp(6rem, 20vw, 10rem); font-weight: 700;
+    color: var(--accent); line-height: 1;
+    text-shadow: 0 4px 24px rgba(255,102,0,.25);
+}
+.not-found h2 { font-size: 1.8rem; margin: 12px 0 10px; }
+.not-found p { color: var(--text-muted); font-size: 16px; margin-bottom: 32px; }
+.not-found-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }

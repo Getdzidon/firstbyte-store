@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returns - FirstByte Marketplace</title>
+    <link rel="icon" type="image/png" href="images/Favicon.png">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/pages.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <a href="index.html" class="logo-link">
+            <img src="images/FirstByte Logo1.png" alt="FirstByte Logo" class="logo-img">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#products">Shop</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <h1>Returns & Refunds</h1>
+        <p>Hassle-free returns within 30 days</p>
+    </div>
+
+    <main class="page-content">
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">📦</div>
+                <h3>30-Day Returns</h3>
+                <p>Return any item within 30 days of delivery, no questions asked.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">💸</div>
+                <h3>Full Refund</h3>
+                <p>Receive a full refund to your original payment method within 5–7 business days.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🔄</div>
+                <h3>Free Exchanges</h3>
+                <p>Exchange for a different product or variant at no extra cost.</p>
+            </div>
+        </div>
+
+        <div class="prose">
+            <h2>How to Start a Return</h2>
+            <ol>
+                <li>Contact us via the <a href="index.html#contact">Help Center</a> with your order number and reason for return.</li>
+                <li>We'll email you a prepaid return shipping label within 24 hours.</li>
+                <li>Pack the item securely in its original packaging and attach the label.</li>
+                <li>Drop it off at any authorised carrier location.</li>
+                <li>Once we receive and inspect the item, your refund will be processed within 5–7 business days.</li>
+            </ol>
+
+            <h2>Conditions for Returns</h2>
+            <ul>
+                <li>Items must be returned within 30 days of the delivery date.</li>
+                <li>Products must be unused, undamaged, and in original packaging.</li>
+                <li>Include all accessories, manuals, and original tags.</li>
+                <li>Items marked as "Final Sale" are not eligible for return.</li>
+            </ul>
+
+            <h2>Damaged or Defective Items</h2>
+            <p>If you received a damaged or defective item, please contact us within 7 days of delivery with photos of the damage. We will arrange a replacement or full refund at no cost to you.</p>
+
+            <h2>Refund Timeline</h2>
+            <p>Refunds are processed within 5–7 business days after we receive your return. Depending on your bank, it may take an additional 2–3 days to appear on your statement.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/FirstByte Logo1.png" alt="FirstByte Logo" class="footer-logo">
+                <p>Your one-stop shop for the latest tech at unbeatable prices.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="index.html#products">All Products</a></li>
+                    <li><a href="index.html#products">Audio</a></li>
+                    <li><a href="index.html#products">Wearables</a></li>
+                    <li><a href="index.html#products">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="shipping.html">Shipping Info</a></li>
+                    <li><a href="returns.html">Returns</a></li>
+                    <li><a href="index.html#contact">Help Center</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FirstByte Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            document.querySelector('.theme-toggle').textContent = isDark ? '🌙' : '☀️';
+        }
+    </script>
+</body>
+</html>

@@ -89,7 +89,8 @@
                 <div class="product-img-wrap"><img src="images/product1.jpg" alt="Wireless Headphone"></div>
         <div class="product-body">
                 <h3>Wireless Headphone</h3>
-                <p class="price">$49.99</p>
+                <div class="stars">★★★★★ <span>4.8</span></div>
+                <div class="price-wrap"><span class="old-price">$69.99</span><span class="price">$49.99</span></div>
                 <div class="product-actions">
                     <button class="btn-outline" onclick="openModal(this)">Quick View</button>
                     <button onclick="addToCart(this)">Add to Cart</button>
@@ -101,6 +102,7 @@
                 <div class="product-img-wrap"><img src="images/product2.jpg" alt="Smartwatch"></div>
         <div class="product-body">
                 <h3>Smartwatch</h3>
+                <div class="stars">★★★★☆ <span>4.3</span></div>
                 <p class="price">$89.99</p>
                 <div class="product-actions">
                     <button class="btn-outline" onclick="openModal(this)">Quick View</button>
@@ -112,6 +114,7 @@
                 <div class="product-img-wrap"><img src="images/product3.jpg" alt="Gaming Mouse"></div>
         <div class="product-body">
                 <h3>Gaming Mouse</h3>
+                <div class="stars">★★★★★ <span>4.7</span></div>
                 <p class="price">$29.99</p>
                 <div class="product-actions">
                     <button class="btn-outline" onclick="openModal(this)">Quick View</button>
@@ -120,11 +123,12 @@
                 </div>
             </div>
             <div class="product" data-category="audio" data-name="Earbuds Pro" data-price="34.99" data-desc="True wireless earbuds with 24hr total battery, IPX5 water resistance and touch controls.">
-                <span class="badge">Sale</span>
+                <span class="badge sale">Sale</span>
                 <div class="product-img-wrap"><img src="images/Earbuds Pro.jpg" alt="Earbuds Pro"></div>
         <div class="product-body">
                 <h3>Earbuds Pro</h3>
-                <p class="price">$34.99</p>
+                <div class="stars">★★★★☆ <span>4.4</span></div>
+                <div class="price-wrap"><span class="old-price">$54.99</span><span class="price">$34.99</span></div>
                 <div class="product-actions">
                     <button class="btn-outline" onclick="openModal(this)">Quick View</button>
                     <button onclick="addToCart(this)">Add to Cart</button>
@@ -135,6 +139,7 @@
                 <div class="product-img-wrap"><img src="images/Phone Stand.jpg" alt="Phone Stand"></div>
         <div class="product-body">
                 <h3>Phone Stand</h3>
+                <div class="stars">★★★★☆ <span>4.2</span></div>
                 <p class="price">$14.99</p>
                 <div class="product-actions">
                     <button class="btn-outline" onclick="openModal(this)">Quick View</button>
@@ -147,6 +152,7 @@
                 <div class="product-img-wrap"><img src="images/USB-C Hub.jpg" alt="USB-C Hub"></div>
         <div class="product-body">
                 <h3>USB-C Hub</h3>
+                <div class="stars">★★★★★ <span>4.6</span></div>
                 <p class="price">$39.99</p>
                 <div class="product-actions">
                     <button class="btn-outline" onclick="openModal(this)">Quick View</button>
@@ -158,6 +164,7 @@
                 <div class="product-img-wrap"><img src="images/Laptop Sleeve.jpg" alt="Laptop Sleeve"></div>
         <div class="product-body">
                 <h3>Laptop Sleeve</h3>
+                <div class="stars">★★★★☆ <span>4.1</span></div>
                 <p class="price">$19.99</p>
                 <div class="product-actions">
                     <button class="btn-outline" onclick="openModal(this)">Quick View</button>
@@ -170,7 +177,8 @@
                 <div class="product-img-wrap"><img src="images/Gaming Keyboard.jpg" alt="Gaming Keyboard"></div>
         <div class="product-body">
                 <h3>Gaming Keyboard</h3>
-                <p class="price">$59.99</p>
+                <div class="stars">★★★★★ <span>4.9</span></div>
+                <div class="price-wrap"><span class="old-price">$79.99</span><span class="price">$59.99</span></div>
                 <div class="product-actions">
                     <button class="btn-outline" onclick="openModal(this)">Quick View</button>
                     <button onclick="addToCart(this)">Add to Cart</button>
@@ -181,6 +189,7 @@
                 <div class="product-img-wrap"><img src="images/Fitness Tracker.jpg" alt="Fitness Tracker"></div>
         <div class="product-body">
                 <h3>Fitness Tracker</h3>
+                <div class="stars">★★★★☆ <span>4.5</span></div>
                 <p class="price">$44.99</p>
                 <div class="product-actions">
                     <button class="btn-outline" onclick="openModal(this)">Quick View</button>
@@ -200,6 +209,36 @@
             <div class="stat"><span class="stat-num" data-target="12000">0</span><small>Happy Customers</small></div>
             <div class="stat"><span class="stat-num" data-target="500">0</span><small>Products</small></div>
             <div class="stat"><span class="stat-num" data-target="99">0</span><small>% Satisfaction</small></div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+        <div class="section-header">
+            <h2>Customer Reviews</h2>
+            <p>What our customers are saying</p>
+        </div>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">"The wireless headphones are absolutely amazing. Sound quality is top-notch and the battery lasts forever. Best purchase I've made this year!"</p>
+                <div class="reviewer"><div class="reviewer-avatar">JM</div><div><strong>James M.</strong><small>Verified Buyer</small></div></div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">"Fast shipping and the gaming keyboard exceeded my expectations. The RGB lighting is stunning and the keys feel incredible to type on."</p>
+                <div class="reviewer"><div class="reviewer-avatar">SA</div><div><strong>Sarah A.</strong><small>Verified Buyer</small></div></div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <p class="review-text">"Great smartwatch for the price. Tracks everything I need and the battery life is solid. Would definitely recommend to anyone looking for a budget wearable."</p>
+                <div class="reviewer"><div class="reviewer-avatar">TK</div><div><strong>Tom K.</strong><small>Verified Buyer</small></div></div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">"The USB-C hub is a game changer for my setup. All 7 ports work flawlessly and the 4K HDMI output is crystal clear. Highly recommend!"</p>
+                <div class="reviewer"><div class="reviewer-avatar">LP</div><div><strong>Lisa P.</strong><small>Verified Buyer</small></div></div>
+            </div>
         </div>
     </section>
 
@@ -237,16 +276,16 @@
                 <ul>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Support</h4>
                 <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="shipping.html">Shipping Info</a></li>
+                    <li><a href="returns.html">Returns</a></li>
                     <li><a href="#contact">Help Center</a></li>
                 </ul>
             </div>

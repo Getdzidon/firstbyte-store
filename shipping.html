@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Info - FirstByte Marketplace</title>
+    <link rel="icon" type="image/png" href="images/Favicon.png">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/pages.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <a href="index.html" class="logo-link">
+            <img src="images/FirstByte Logo1.png" alt="FirstByte Logo" class="logo-img">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#products">Shop</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <h1>Shipping Information</h1>
+        <p>Everything you need to know about delivery</p>
+    </div>
+
+    <main class="page-content">
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">🚚</div>
+                <h3>Standard Shipping</h3>
+                <p>3–5 business days</p>
+                <p class="info-price">Free on orders over $50</p>
+                <p class="info-price">$4.99 under $50</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">⚡</div>
+                <h3>Express Shipping</h3>
+                <p>1–2 business days</p>
+                <p class="info-price">$12.99 flat rate</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🌍</div>
+                <h3>International</h3>
+                <p>7–14 business days</p>
+                <p class="info-price">From $19.99</p>
+            </div>
+        </div>
+
+        <div class="prose">
+            <h2>Order Processing</h2>
+            <p>Orders are processed within 1–2 business days after payment confirmation. Orders placed on weekends or public holidays are processed the next business day.</p>
+
+            <h2>Tracking Your Order</h2>
+            <p>Once your order has shipped, you will receive an email with your tracking number. You can use this number on the carrier's website to monitor your delivery in real time.</p>
+
+            <h2>International Shipping</h2>
+            <p>We ship to over 50 countries. Please note that international orders may be subject to customs duties and import taxes, which are the responsibility of the recipient. Delivery times may vary depending on customs processing in your country.</p>
+
+            <h2>Shipping Restrictions</h2>
+            <p>Some products cannot be shipped to certain regions due to local regulations. If your order cannot be fulfilled for your location, you will be notified at checkout.</p>
+
+            <h2>Lost or Damaged Packages</h2>
+            <p>If your package arrives damaged or goes missing, please contact us at <a href="index.html#contact">our support page</a> within 7 days of the expected delivery date and we will resolve it promptly.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/FirstByte Logo1.png" alt="FirstByte Logo" class="footer-logo">
+                <p>Your one-stop shop for the latest tech at unbeatable prices.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="index.html#products">All Products</a></li>
+                    <li><a href="index.html#products">Audio</a></li>
+                    <li><a href="index.html#products">Wearables</a></li>
+                    <li><a href="index.html#products">Gaming</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="shipping.html">Shipping Info</a></li>
+                    <li><a href="returns.html">Returns</a></li>
+                    <li><a href="index.html#contact">Help Center</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FirstByte Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            document.querySelector('.theme-toggle').textContent = isDark ? '🌙' : '☀️';
+        }
+    </script>
+</body>
+</html>
